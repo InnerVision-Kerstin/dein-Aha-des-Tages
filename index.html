@@ -141,6 +141,13 @@ header.top{position:relative}
 .motto{font-family:var(--hand);font-size:21px;line-height:1.35;color:var(--rose-ink);margin:0}
 .motto.big{font-size:24px}
 header .motto{margin-top:6px;padding-left:14px;border-left:3px solid var(--rose)}
+.why{background:var(--surface);border-radius:22px;padding:24px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px;border-left:6px solid var(--amber)}
+.why p{margin:0}
+.why .sig{font-family:var(--hand);font-size:20px;color:var(--rose-ink)}
+.card.transit{background:linear-gradient(135deg,var(--blue-soft),var(--rose-soft));border-color:transparent}
+.card.transit h4{color:var(--blue-ink)}
+.card.transit ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+.card.transit .match{font-size:14px;font-weight:800;color:var(--rose-ink)}
 /* Design Zusammenfassung */
 .me{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:baseline}
 .me .who{font-family:var(--display);font-size:24px}
@@ -271,6 +278,15 @@ footer a{color:inherit}
     <div id="hist" class="hist"></div>
     <div class="actions noprint"><button class="btn ghost" id="btnMore" hidden>Alle Einträge zeigen</button><button class="btn" id="btnPrint">Tagebuch drucken oder als PDF sichern</button><button class="btn ghost" id="btnTxt">Als Textdatei speichern</button><span class="toast" id="histToast" role="status"></span></div>
     <p class="small muted noprint" style="margin:0">Dein Tagebuch ist nur in diesem Browser gespeichert. Sichere es ab und zu, dann geht nix verloren, und du kannst es auch zu deiner Begleitung mitnehmen.</p>
+  </section>
+
+  <section class="why" aria-labelledby="h-why">
+    <h3 id="h-why">Warum es Dein Aha des Tages gibt</h3>
+    <p>Ich bin krank im Bett gelegen, zum ersten Mal seit 2023. Und ich hab mich gefragt, wie konnte das passieren?</p>
+    <p>Dann bin ich zurückgegangen, Stopp für Stopp. Und plötzlich hab ich's gesehen. Die Stopps waren alle da. Ich hab sie nur nicht erkannt.</p>
+    <p>Erst als ich verstanden hab, was da in mir passiert ist, konnte ich was ändern. Weil es mir endlich bewusst war.</p>
+    <p>Genau dafür gibt's diesen Rechner. Damit du nicht erst krank werden musst, um hinzuschauen.</p>
+    <p class="sig">Kerstin 💜</p>
   </section>
 
   <section class="more" aria-labelledby="h-more">
@@ -876,6 +892,16 @@ RS.AWARE = [
   { id: "vorher",   l: "rechtzeitig, und ich hab gehandelt" }
 ];
 
+RS.GATE_NAME = {1:"Kreativität",2:"Richtung",3:"Neubeginn",4:"Antworten",5:"Rhythmus",6:"Reibung",7:"Führung",8:"Beitrag",9:"Fokus",10:"Selbstliebe",11:"Ideen",12:"Vorsicht",13:"Zuhören",14:"Kraft",15:"Extreme",16:"Begeisterung",17:"Meinung",18:"Korrektur",19:"Bedürfnisse",20:"Gegenwart",21:"Kontrolle",22:"Anmut",23:"Erklärung",24:"Grübeln",25:"Unschuld",26:"Überzeugung",27:"Fürsorge",28:"Sinn",29:"Hingabe",30:"Sehnsucht",31:"Einfluss",32:"Beständigkeit",33:"Rückzug",34:"Stärke",35:"Erfahrung",36:"Krise",37:"Familie",38:"Kampf",39:"Provokation",40:"Alleinsein",41:"Fantasie",42:"Abschluss",43:"Einsicht",44:"Wachsamkeit",45:"Versorgen",46:"Körper",47:"Verstehen",48:"Tiefe",49:"Prinzipien",50:"Werte",51:"Schock",52:"Stillstand",53:"Anfang",54:"Ehrgeiz",55:"Stimmung",56:"Geschichten",57:"Intuition",58:"Lebensfreude",59:"Nähe",60:"Grenzen",61:"Inneres Wissen",62:"Details",63:"Zweifel",64:"Verwirrung"};
+RS.TRANSIT = {
+  title: "Was heute in der Luft liegt",
+  sun: "Diese Tage steht für alle Tor {g}, {n}, im Vordergrund.",
+  center: "Heute {v} {c} von außen aktiviert. Diese Themen spürst du stärker als sonst, und sie sind nicht nur deine.",
+  channel: "Mit deinem Tor {own} ergibt sich heute der {k}. Dieses Thema ist heute besonders laut bei dir.",
+  calm: "Sonst ist heute ein eher ruhiger Tag für dich.",
+  match: "Das passt zu dem, was du angetippt hast"
+};
+
 RS.NOTE_FOUND = "Aus deinem Text hab ich auch das erkannt";
 RS.HINWEIS = "Dein Aha des Tages ist eine Einladung zur Selbstreflexion mit Human Design. Sie ersetzt keine ärztliche oder therapeutische Begleitung. Wenn dein Körper länger streikt, lass dich bitte ärztlich anschauen.";
 </script>
@@ -950,6 +976,32 @@ RS.HINWEIS = "Dein Aha des Tages ist eine Einladung zur Selbstreflexion mit Huma
   var SHAPE={Kopf:'M8 2 L14 13 L2 13 Z',Ajna:'M2 3 L14 3 L8 14 Z',Kehle:'M3 3 H13 V13 H3 Z',G:'M8 1.5 L14.5 8 L8 14.5 L1.5 8 Z',Herz:'M3 12 L13 12 L10 4 Z',Milz:'M14 2 L14 14 L2 8 Z',Sakral:'M3 3 H13 V13 H3 Z',Emotional:'M2 2 L2 14 L14 8 Z',Wurzel:'M3 3 H13 V13 H3 Z'};
   var SHORT={Kopf:"Kopf",Ajna:"Ajna",Kehle:"Kehle",G:"G Zentrum",Herz:"Herz",Milz:"Milz",Sakral:"Sakral",Emotional:"Emotionalzentrum",Wurzel:"Wurzel"};
   function cicon(x,filled){ return '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="'+SHAPE[x]+'" fill="'+(filled?'currentColor':'none')+'" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>'; }
+  var CH_ALL=[[1,8],[2,14],[3,60],[4,63],[5,15],[6,59],[7,31],[9,52],[10,20],[10,34],[10,57],[11,56],[12,22],[13,33],[16,48],[17,62],[18,58],[19,49],[20,34],[20,57],[21,45],[23,43],[24,61],[25,51],[26,44],[27,50],[28,38],[29,46],[30,41],[32,54],[34,57],[35,36],[37,40],[39,55],[42,53],[47,64]];
+  var CG={Kopf:[64,61,63],Ajna:[47,24,4,17,43,11],Kehle:[62,23,56,35,12,45,33,8,31,20,16],G:[1,13,25,46,2,15,10,7],Herz:[21,40,26,51],Milz:[48,57,44,50,32,28,18],Sakral:[34,5,14,29,59,9,3,42,27],Emotional:[36,22,37,6,49,55,30],Wurzel:[58,38,54,53,60,52,19,39,41]};
+  function g2c(g){ for(var k in CG) if(CG[k].indexOf(g)>=0) return k; }
+  function fill(t,o){ return t.replace(/\{(\w+)\}/g,function(m,k){return o[k];}); }
+  var TRANSIT=null;
+  function transitNow(){
+    if(TRANSIT) return TRANSIT;
+    var d=new Date(), p=function(n){return (n<10?"0":"")+n;};
+    var tz="Europe/Vienna"; try{ tz=Intl.DateTimeFormat().resolvedOptions().timeZone||tz; }catch(e){}
+    var t=HumanDesign.compute(d.getFullYear()+"-"+p(d.getMonth()+1)+"-"+p(d.getDate()), p(d.getHours())+":"+p(d.getMinutes()), tz, "", "Transit");
+    var gates=t.planets_personality.map(function(x){return x.gate;});
+    var sun=t.planets_personality.filter(function(x){return x.body==="Sonne";})[0].gate;
+    TRANSIT={gates:gates,sun:sun}; return TRANSIT;
+  }
+  function transitFor(chart){
+    var T=transitNow(), own=chart.gates_all, all=own.concat(T.gates), res={sun:T.sun, centers:[], channels:[]};
+    CH_ALL.forEach(function(ch){
+      var a=ch[0], b=ch[1];
+      if(all.indexOf(a)<0||all.indexOf(b)<0) return;
+      var ownA=own.indexOf(a)>=0, ownB=own.indexOf(b)>=0;
+      if(ownA&&ownB) return;
+      [g2c(a),g2c(b)].forEach(function(c){ if(chart.centers_open.indexOf(c)>=0 && res.centers.indexOf(c)<0) res.centers.push(c); });
+      if(ownA||ownB) res.channels.push({k:a+"-"+b, own:ownA?a:b, other:ownA?b:a});
+    });
+    return res;
+  }
   function channelKeys(chart){ return chart.channels.map(function(c){ var a=Math.min(c.gates[0],c.gates[1]), b=Math.max(c.gates[0],c.gates[1]); return a+"-"+b; }); }
   function isOpen(chart,c){ return chart.centers_open.indexOf(c)>=0; }
 
@@ -1075,6 +1127,21 @@ RS.HINWEIS = "Dein Aha des Tages ist eine Einladung zur Selbstreflexion mit Huma
       cards+='<div class="card accent"><div class="kind">Hunger</div><h4>Welcher Hunger ist das?</h4><p>'+esc(RS.HUNGER.intro)+'</p><div class="opts" id="hOpts">'+RS.HUNGER.opts.map(function(o){ return '<button class="opt" aria-pressed="'+(state.hunger===o.id?'true':'false')+'" data-h="'+o.id+'">'+esc(o.l)+'</button>'; }).join("")+'</div><p class="hunger-answer" id="hAns">'+(state.hunger?esc(RS.HUNGER.opts.filter(function(o){return o.id===state.hunger;})[0].t):'')+'</p></div>';
     }
 
+    try{
+      var TR=transitFor(c), lis=[], matched=[];
+      var selGates=[], selCenters=[];
+      A.ids.forEach(function(id){ var it=ITEM[id]; (it.g||[]).forEach(function(g){selGates.push(g);}); (it.c||[]).forEach(function(x){selCenters.push(x);}); });
+      var sunTxt=fill(RS.TRANSIT.sun,{g:TR.sun,n:RS.GATE_NAME[TR.sun]})+(RS.GATE[TR.sun]?" "+RS.GATE[TR.sun].d:"");
+      lis.push(sunTxt);
+      if(selGates.indexOf(TR.sun)>=0) matched.push("Tor "+TR.sun);
+      var poss=function(x){ var n=RS.CENTER_NAME[x].open; return (/^Offene /.test(n)?"deine ":"dein ")+n.charAt(0).toLowerCase()+n.slice(1); };
+      if(TR.centers.length){ lis.push(fill(RS.TRANSIT.center,{v:TR.centers.length>1?"sind":"ist",c:joinNat(TR.centers.map(poss))})); }
+      TR.centers.forEach(function(x){ if(selCenters.indexOf(x)>=0) matched.push(poss(x)); });
+      TR.channels.slice(0,2).forEach(function(ch){ var nm=RS.CHANNEL[ch.k]?RS.CHANNEL[ch.k].t:"Kanal "+ch.k.replace("-"," ")+", "+RS.GATE_NAME[+ch.k.split("-")[0]]+" und "+RS.GATE_NAME[+ch.k.split("-")[1]]; lis.push(fill(RS.TRANSIT.channel,{own:ch.own,k:nm})); if(selGates.indexOf(ch.own)>=0||selGates.indexOf(ch.other)>=0) matched.push("Tor "+ch.own); });
+      if(!TR.centers.length && !TR.channels.length) lis.push(RS.TRANSIT.calm);
+      state.sunGate=TR.sun;
+      cards+='<div class="card transit"><div class="kind">Tagestransit</div><h4>'+esc(RS.TRANSIT.title)+'</h4><ul>'+lis.map(function(x){return '<li>'+esc(x)+'</li>';}).join("")+'</ul>'+(matched.length?'<p class="match">'+esc(RS.TRANSIT.match)+', '+esc(joinNat(matched.filter(function(v,i,a){return a.indexOf(v)===i;})))+'</p>':'')+'</div>';
+    }catch(e){}
     var auth=RS.AUTH[c.authority];
     if(auth){
       cards+='<div class="card'+(A.flags.auth?' warn':'')+'"><div class="kind">Deine '+esc(RS.AUTH_NAME[c.authority]||c.authority)+'</div><h4>So merkst du den Stopp beim nächsten Mal früher</h4><p>'+esc(auth)+'</p></div>';
@@ -1096,7 +1163,7 @@ RS.HINWEIS = "Dein Aha des Tages ist eine Einladung zur Selbstreflexion mit Huma
     $("btnSave").onclick=function(){
       var h=store("rs_hist")||[];
       if(state.birth.example){ $("saveToast").textContent="Trag zuerst echte Geburtsdaten ein, dann kannst du speichern."; return; }
-      h.unshift({ pid:state.birth.id, t:Date.now(), sel:A.ids, note:$("fNote").value.trim(), top:A.order.slice(0,3), hunger:state.hunger, aware:state.aware, j:RS.JOURNAL.reduce(function(o,j){ var v=$(j.id).value.trim(); if(v) o[j.id]=v; return o; },{}) });
+      h.unshift({ pid:state.birth.id, t:Date.now(), sel:A.ids, note:$("fNote").value.trim(), top:A.order.slice(0,3), hunger:state.hunger, aware:state.aware, sun:state.sunGate||null, j:RS.JOURNAL.reduce(function(o,j){ var v=$(j.id).value.trim(); if(v) o[j.id]=v; return o; },{}) });
       store("rs_hist",h.slice(0,200));
       $("saveToast").textContent="Gespeichert";
       renderHist();
@@ -1124,7 +1191,7 @@ RS.HINWEIS = "Dein Aha des Tages ist eine Einladung zur Selbstreflexion mit Huma
     $("hist").innerHTML=(showAll?h:h.slice(0,8)).map(function(e){
       var d=new Date(e.t);
       var lab=(e.sel||[]).map(function(id){ return ITEM[id]?ITEM[id].l:""; }).filter(Boolean);
-      return '<div class="entry"><span class="d">'+d.toLocaleDateString("de-AT",{weekday:"short",day:"numeric",month:"short"})+'</span><span>'+esc(lab.join(", "))+'</span>'+(e.note?'<span class="n">'+esc(e.note)+'</span>':'')+RS.JOURNAL.map(function(j){ return e.j&&e.j[j.id]?'<span class="j"><b>'+esc(j.q)+'</b> '+esc(e.j[j.id])+'</span>':''; }).join("")+(e.aware?'<span class="j"><b>'+esc(RS.AWARE_Q)+'</b> '+esc((RS.AWARE.filter(function(o){return o.id===e.aware;})[0]||{}).l||"")+'</span>':'')+'</div>';
+      return '<div class="entry"><span class="d">'+d.toLocaleDateString("de-AT",{weekday:"short",day:"numeric",month:"short"})+(e.sun?' · Sonne in Tor '+e.sun:'')+'</span><span>'+esc(lab.join(", "))+'</span>'+(e.note?'<span class="n">'+esc(e.note)+'</span>':'')+RS.JOURNAL.map(function(j){ return e.j&&e.j[j.id]?'<span class="j"><b>'+esc(j.q)+'</b> '+esc(e.j[j.id])+'</span>':''; }).join("")+(e.aware?'<span class="j"><b>'+esc(RS.AWARE_Q)+'</b> '+esc((RS.AWARE.filter(function(o){return o.id===e.aware;})[0]||{}).l||"")+'</span>':'')+'</div>';
     }).join("");
   }
 
@@ -1135,6 +1202,7 @@ RS.HINWEIS = "Dein Aha des Tages ist eine Einladung zur Selbstreflexion mit Huma
       out.push(new Date(e.t).toLocaleDateString("de-AT",{weekday:"long",day:"numeric",month:"long",year:"numeric"}));
       out.push("Angetippt  "+(e.sel||[]).map(function(id){return ITEM[id]?ITEM[id].l:"";}).filter(Boolean).join(", "));
       if(e.top&&e.top.length) out.push("Hat mitgespielt  "+e.top.map(cName).join(", "));
+      if(e.sun) out.push("Transit  Sonne in Tor "+e.sun+", "+RS.GATE_NAME[e.sun]);
       if(e.note) out.push("Notiz  "+e.note);
       RS.JOURNAL.forEach(function(j){ if(e.j&&e.j[j.id]) out.push(j.q+"  "+e.j[j.id]); });
       if(e.aware) out.push(RS.AWARE_Q+"  "+((RS.AWARE.filter(function(o){return o.id===e.aware;})[0]||{}).l||""));
@@ -1167,6 +1235,9 @@ RS.HINWEIS = "Dein Aha des Tages ist eine Einladung zur Selbstreflexion mit Huma
   if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",boot); else boot();
 })();
 </script>
+
+</body>
+</html>
 
 </body>
 </html>
