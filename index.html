@@ -138,6 +138,9 @@ header.top{position:relative}
 .lbtn svg{width:18px;height:18px;flex:none}
 .lbtn.wa{background:var(--sage-ink);border-color:var(--sage-ink);color:#fff}
 .lbtn:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+.motto{font-family:var(--hand);font-size:21px;line-height:1.35;color:var(--rose-ink);margin:0}
+.motto.big{font-size:24px}
+header .motto{margin-top:6px;padding-left:14px;border-left:3px solid var(--rose)}
 /* Design Zusammenfassung */
 .me{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:baseline}
 .me .who{font-family:var(--display);font-size:24px}
@@ -227,6 +230,7 @@ footer a{color:inherit}
     <div class="brand">innervision · Human Design</div>
     <h1>Dein <em class="mark">Aha</em> des Tages</h1>
     <p class="lead">Erkenne deine Muster mitten im Alltag. Nicht erst zwei Wochen später.</p>
+    <p class="motto">Du kannst nur etwas verändern, wenn du es verstehst.</p>
   </header>
 
   <section class="panel tint-blue" id="designPanel" aria-labelledby="h-design">
@@ -261,6 +265,7 @@ footer a{color:inherit}
 
   <section class="panel" id="histPanel" aria-labelledby="h-hist" hidden>
     <h3 id="h-hist">Dein Tagebuch</h3>
+    <p class="motto big">Du kannst nur etwas verändern, wenn du es verstehst. Hier siehst du, wie du's Schritt für Schritt verstehst.</p>
     <div id="pattern" class="pattern"></div>
     <h2 style="font-size:21px">Deine Einträge</h2>
     <div id="hist" class="hist"></div>
@@ -1080,7 +1085,7 @@ RS.HINWEIS = "Dein Aha des Tages ist eine Einladung zur Selbstreflexion mit Huma
     if(A.flags.invite) RS.INVITE_TIPS.forEach(function(t){ tips.push('<li class="inv">'+esc(t)+'</li>'); });
     A.order.slice(0,2).forEach(function(x){ var o=isOpen(c,x); var T=RS.TIPS[x][o?'open':'def']; var st=o?RS.CENTER[x].openStep:RS.CENTER[x].defStep; [st].concat(T.slice(0,1)).forEach(function(t){ tips.push('<li>'+esc(t)+'</li>'); }); });
     html+='<div class="today"><h3>Deine Alltagstipps für heute</h3><ul class="tips">'+tips.slice(0,6).join("")+'</ul></div>';
-    html+='<div class="today journal"><h3>Schreib’s dir auf</h3><p class="muted small" style="margin:0">Aufschreiben macht dir bewusst, was grad passiert ist. Und später siehst du schwarz auf weiß, wie sich dein Umgang damit verändert.</p>'+
+    html+='<div class="today journal"><h3>Schreib’s dir auf</h3><p class="motto big">Du kannst nur etwas verändern, wenn du es verstehst.</p><p class="muted small" style="margin:0">Aufschreiben macht dir bewusst, was grad passiert ist. Und später siehst du schwarz auf weiß, wie sich dein Umgang damit verändert.</p>'+
       RS.JOURNAL.map(function(j){ return '<div><label for="'+j.id+'">'+esc(j.q)+'</label><textarea id="'+j.id+'" placeholder="'+esc(j.ph)+'"></textarea></div>'; }).join("")+
       '<div><label>'+esc(RS.AWARE_Q)+'</label><div class="aware" id="aware">'+RS.AWARE.map(function(o){ return '<button class="aw" data-a="'+o.id+'" aria-pressed="false">'+esc(o.l)+'</button>'; }).join("")+'</div></div>'+
       '<div class="actions"><button class="btn sage" id="btnSave">Im Tagebuch speichern</button><span class="toast" id="saveToast" role="status"></span></div></div>';
@@ -1162,6 +1167,9 @@ RS.HINWEIS = "Dein Aha des Tages ist eine Einladung zur Selbstreflexion mit Huma
   if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",boot); else boot();
 })();
 </script>
+
+</body>
+</html>
 
 </body>
 </html>
