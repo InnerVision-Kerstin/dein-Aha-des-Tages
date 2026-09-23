@@ -7,82 +7,60 @@
 <meta name="description" content="Dein Aha des Tages von innervision.at, erkenne deine Muster mitten im Alltag mit Human Design">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Nunito:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Nunito:wght@400;600;700;800&family=Playfair+Display:wght@600;700&display=swap">
 <style>
 :root{
-  --bg:#F5F1EC; --surface:#FFFFFF; --surface2:#FBF8F5; --ink:#2E2A2C; --muted:#6E6568; --line:#E6DED7;
-  --sage:#8CA179; --sage-ink:#55704A; --sage-soft:#E4EBDD;
-  --rose:#C6A5B7; --rose-ink:#8A5E76; --rose-soft:#F3E8EE;
-  --amber:#EDB877; --amber-ink:#94651C; --amber-soft:#FBEBD3;
-  --blue:#A9C1D6; --blue-ink:#44647F; --blue-soft:#E3ECF4; --yellow-soft:#F8EFCF;
-  --shadow:0 10px 30px rgba(46,42,44,.07);
+  --bg:#FCF8F2; --surface:#FFFFFF; --surface2:#F6F1E7; --ink:#3A332D; --muted:#6E655D; --line:#E8DFCF; --rule:#D8CBB4;
+  --sage:#9FB49B; --sage-ink:#5F7359; --sage-soft:#EAF0E8;
+  --rose:#D9A7A1; --rose-ink:#9E5F58; --rose-soft:#F8ECE9;
+  --amber:#EFC978; --amber-ink:#8A6516; --amber-soft:#FAEFD8;
+  --blue:#7FA0B8; --blue-ink:#4E6E88; --blue-soft:#EAF0F5; --yellow-soft:#FAEFD8;
+  --shadow:none;
   --display:'Playfair Display',Georgia,'Times New Roman',serif;
   --body:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;
-  --hand:'Kalam','Comic Sans MS',cursive;
+  --hand:'Nunito',system-ui,sans-serif;
   color-scheme:light;
-}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --bg:#1E1A1C; --surface:#2A2528; --surface2:#241F22; --ink:#EFEAE6; --muted:#B5AAAF; --line:#3C3439;
-    --sage:#9DB38A; --sage-ink:#B9CFA6; --sage-soft:#2E3A2A;
-    --rose:#C6A5B7; --rose-ink:#DDBFD0; --rose-soft:#3A2D34;
-    --amber:#EDB877; --amber-ink:#EDC48D; --amber-soft:#3C3021;
-    --blue:#8FAAC2; --blue-ink:#B7CDE0; --blue-soft:#26303A; --yellow-soft:#3A3322;
-    --shadow:0 10px 30px rgba(0,0,0,.35); color-scheme:dark;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#1E1A1C; --surface:#2A2528; --surface2:#241F22; --ink:#EFEAE6; --muted:#B5AAAF; --line:#3C3439;
-  --sage:#9DB38A; --sage-ink:#B9CFA6; --sage-soft:#2E3A2A;
-  --rose:#C6A5B7; --rose-ink:#DDBFD0; --rose-soft:#3A2D34;
-  --amber:#EDB877; --amber-ink:#EDC48D; --amber-soft:#3C3021;
-  --blue:#8FAAC2; --blue-ink:#B7CDE0; --blue-soft:#26303A; --yellow-soft:#3A3322;
-    --shadow:0 10px 30px rgba(0,0,0,.35); color-scheme:dark;
 }
 *{box-sizing:border-box}
 [hidden]{display:none!important}
-body{margin:0;background:radial-gradient(900px 500px at -10% -5%,var(--rose-soft),transparent 70%),radial-gradient(900px 600px at 110% 30%,var(--blue-soft),transparent 70%),radial-gradient(800px 500px at 20% 100%,var(--yellow-soft),transparent 70%),var(--bg);background-attachment:fixed;color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
-.wrap{max-width:720px;margin:0 auto;padding-inline:18px;padding-block:28px 60px;display:flex;flex-direction:column;gap:22px}
-header.top{display:flex;flex-direction:column;gap:6px;padding-block:10px 4px}
-.brand{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-ink);font-weight:800}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.62;-webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto;padding-inline:22px;padding-block:26px 70px;display:flex;flex-direction:column;gap:34px}
+header.top{display:flex;flex-direction:column;gap:10px;padding-block:6px 10px}
+.brand{font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:700;border-bottom:1px solid var(--rule);padding-bottom:10px}
 h1{font-family:var(--display);font-weight:600;font-size:clamp(34px,7vw,50px);line-height:1.08;margin:0;text-wrap:balance}
-h1 em{color:var(--rose-ink);font-style:italic}
-h1 .mark{background:linear-gradient(transparent 62%,var(--amber) 62%,var(--amber) 90%,transparent 90%);padding:0 .12em}
-.lead{font-family:var(--hand);font-size:21px;color:var(--muted);margin:2px 0 0;line-height:1.35}
+h1 em{color:var(--ink);font-weight:700}
+h1 .mark{border-bottom:5px solid var(--amber);padding-bottom:1px}
+.lead{font-size:19px;color:var(--muted);font-weight:600;margin:2px 0 0;line-height:1.35}
 h2{font-family:var(--display);font-weight:600;font-size:26px;line-height:1.2;margin:0;text-wrap:balance}
 h3{font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--sage-ink);margin:0;font-weight:800}
-.panel.tint-blue{border-top:6px solid var(--blue)}
-#histPanel{border-top:6px solid var(--rose)}
-.panel.tint-sage{border-top:6px solid var(--sage)}
-.panel{background:var(--surface);border-radius:22px;padding:24px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:16px}
+.panel.tint-blue{border-top:2px solid var(--ink)}
+#histPanel{border-top:2px solid var(--ink)}
+.panel.tint-sage{border-top:2px solid var(--ink)}
+.panel{background:transparent;border:0;border-top:1px solid var(--rule);border-radius:0;padding:26px 0 0;display:flex;flex-direction:column;gap:16px}
 .muted{color:var(--muted)}
 .small{font-size:14px}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 @media (max-width:480px){.row{grid-template-columns:1fr}}
 label{display:block;font-size:14px;font-weight:700;margin-bottom:6px;color:var(--muted)}
-input[type=text],input[type=date],input[type=time],textarea{width:100%;font:inherit;font-size:16px;color:var(--ink);background:var(--surface2);border:1.5px solid var(--line);border-radius:12px;padding:11px 13px;outline:none}
+input[type=text],input[type=date],input[type=time],textarea{width:100%;font:inherit;font-size:16px;color:var(--ink);background:#FFFDFA;border:1px solid var(--rule);border-radius:3px;padding:11px 12px;outline:none}
 input:focus-visible,textarea:focus-visible{border-color:var(--sage)}
 textarea{min-height:84px;resize:vertical}
 .ac{position:relative}
-.aclist{position:absolute;left:0;right:0;top:calc(100% + 4px);background:var(--surface);border:1.5px solid var(--line);border-radius:12px;z-index:10;max-height:230px;overflow:auto;box-shadow:var(--shadow)}
+.aclist{position:absolute;left:0;right:0;top:calc(100% + 2px);background:var(--surface);border:1px solid var(--rule);border-radius:3px;z-index:10;max-height:230px;overflow:auto}
 .ac-item{padding:9px 13px;cursor:pointer;font-size:15px}
 .ac-item:hover,.ac-item:focus-visible{background:var(--sage-soft);outline:none}
 button{font:inherit;cursor:pointer}
-.btn{background:var(--ink);color:var(--bg);border:0;border-radius:999px;padding:13px 24px;font-weight:800;font-size:16px;align-self:flex-start}
-.btn.sage{background:var(--sage-ink);color:#fff}
-:root[data-theme="dark"] .btn.sage{color:#1E1A1C}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn.sage{color:#1E1A1C}}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line);padding:9px 16px;font-size:14px}
+.btn{background:var(--ink);color:#FFFDFA;border:1px solid var(--ink);border-radius:3px;padding:13px 22px;font-weight:700;font-size:16px;letter-spacing:.02em;align-self:flex-start}
+.btn.sage{background:var(--sage-ink);border-color:var(--sage-ink);color:#FFFFFF}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--rule);padding:9px 14px;font-size:14px;font-weight:600}
 .btn:focus-visible,.chip:focus-visible,.opt:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
 .err{color:#B3261E;font-size:14px;font-weight:700}
-:root[data-theme="dark"] .err{color:#F2B8B5}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .err{color:#F2B8B5}}
 
 header.top{position:relative}
-.orn{position:absolute;right:-8px;top:-6px;width:130px;height:130px;pointer-events:none;opacity:.9}
-@media (max-width:480px){.orn{width:80px;height:80px;top:-16px;right:-4px;opacity:.55}}
-.orn span{position:absolute;border-radius:50%;border:1.5px solid}
-.design{display:grid;grid-template-columns:200px 1fr;gap:22px;align-items:start}
+.orn{position:absolute;right:0;top:10px;width:92px;height:92px;pointer-events:none}
+@media (max-width:480px){.orn{width:62px;height:62px;top:2px;right:0}}
+
+.design{display:grid;grid-template-columns:220px 1fr;gap:28px;align-items:start}
 .design .mini svg{width:100%;height:auto;border-radius:16px;display:block}
 .design .info{display:flex;flex-direction:column;gap:14px;min-width:0}
 @media (max-width:560px){.design{grid-template-columns:1fr}.design .mini{max-width:190px;margin:0 auto}}
@@ -90,37 +68,35 @@ header.top{position:relative}
 .cg h5{margin:0 0 6px;font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:800}
 .cg.fix h5{color:var(--sage-ink)} .cg.open h5{color:var(--rose-ink)}
 .ctags{display:flex;flex-wrap:wrap;gap:6px}
-.ctag{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:5px 11px 5px 8px;font-size:14px;font-weight:700}
+.ctag{display:inline-flex;align-items:center;gap:6px;border-radius:3px;padding:4px 9px 4px 7px;font-size:14px;font-weight:700}
 .cg.fix .ctag{background:var(--sage-soft);color:var(--sage-ink)}
 .cg.open .ctag{background:var(--rose-soft);color:var(--rose-ink)}
 .ctag svg{width:15px;height:15px;flex:none}
 .hint{font-family:var(--hand);font-size:17px;color:var(--muted);line-height:1.3}
 .gicon{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;margin-right:10px;vertical-align:-4px}
-.group[data-g="koerper"] .gicon{background:var(--sage-soft)}
-.group[data-g="gefuehl"] .gicon{background:var(--rose-soft)}
-.group[data-g="situation"] .gicon{background:var(--amber-soft)}
+.gicon{background:var(--amber-soft);color:var(--amber-ink)}
 .gicon svg{width:17px;height:17px}
-.group[data-g="gefuehl"] .chip[aria-pressed="true"]{background:var(--rose-ink);border-color:var(--rose-ink)}
-.group[data-g="situation"] .chip[aria-pressed="true"]{background:var(--amber-ink);border-color:var(--amber-ink)}
 .found{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:14px}
 .found b{font-weight:800;color:var(--sage-ink);margin-right:4px}
 .found span{background:var(--surface);border-radius:999px;padding:3px 10px;font-weight:700}
-.summary .quote{font-family:var(--hand);font-size:19px;margin:0;color:var(--ink)}
+.summary .quote{font-size:17px;font-weight:600;margin:0;color:var(--ink)}
+.tmatch{font-size:15px;font-weight:600;margin:0}
+.tmatch b{color:var(--rose-ink)}
 .card .body{font-size:14px;color:var(--rose-ink);font-weight:700}
 .tips{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
 .tips li{display:grid;grid-template-columns:22px 1fr;gap:10px;align-items:start;font-size:16.5px}
 .tips li::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--sage);margin-top:7px;justify-self:center}
 .tips li.inv::before{background:var(--amber)}
-.today.journal{background:var(--rose-soft)}
+.today.journal{border-left-color:var(--rose)}
 .today.journal h3{color:var(--rose-ink)}
 .journal textarea{background:var(--surface)}
 .journal{display:flex;flex-direction:column;gap:14px}
 .journal label{color:var(--ink);font-size:15.5px}
 .aware{display:flex;flex-wrap:wrap;gap:8px}
-.aw{border:1.5px solid var(--line);background:var(--surface2);color:var(--ink);border-radius:999px;padding:7px 13px;font-size:14.5px;font-weight:700}
-.aw[aria-pressed="true"][data-a="danach"]{background:var(--rose-ink);border-color:var(--rose-ink);color:#fff}
-.aw[aria-pressed="true"][data-a="mitten"]{background:var(--amber-ink);border-color:var(--amber-ink);color:#fff}
-.aw[aria-pressed="true"][data-a="vorher"]{background:var(--sage-ink);border-color:var(--sage-ink);color:#fff}
+.aw{border:1px solid var(--rule);background:transparent;color:var(--ink);border-radius:3px;padding:7px 12px;font-size:14.5px;font-weight:700}
+.aw[aria-pressed="true"][data-a="danach"]{background:var(--rose);border-color:var(--rose-ink);color:var(--ink)}
+.aw[aria-pressed="true"][data-a="mitten"]{background:var(--amber);border-color:var(--amber-ink);color:var(--ink)}
+.aw[aria-pressed="true"][data-a="vorher"]{background:var(--sage);border-color:var(--sage-ink);color:var(--ink)}
 .aw:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
 .change{display:flex;flex-direction:column;gap:10px}
 .dots{display:flex;gap:6px;flex-wrap:wrap}
@@ -131,28 +107,55 @@ header.top{position:relative}
 .legend i{width:11px;height:11px;border-radius:50%;display:inline-block}
 .entry .j{font-size:14.5px}
 .entry .j b{color:var(--muted);font-weight:700}
-.more{background:var(--blue-soft);border-radius:22px;padding:24px;display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.more{background:transparent;border-top:2px solid var(--ink);border-radius:0;padding:24px 0 0;display:flex;flex-direction:column;gap:14px;align-items:flex-start}
 .more p{margin:0;font-family:var(--display);font-size:22px;line-height:1.3;text-wrap:balance}
 .links{display:flex;flex-wrap:wrap;gap:10px}
-.lbtn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;border-radius:999px;padding:11px 18px;font-weight:800;font-size:15px;background:var(--surface);color:var(--ink);border:1.5px solid var(--line)}
+.lbtn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;border-radius:3px;padding:11px 16px;font-weight:700;font-size:15px;background:var(--amber-soft);color:var(--ink);border:1px solid var(--amber)}
 .lbtn svg{width:18px;height:18px;flex:none}
-.lbtn.wa{background:var(--sage-ink);border-color:var(--sage-ink);color:#fff}
+
 .lbtn:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
-.motto{font-family:var(--hand);font-size:21px;line-height:1.35;color:var(--rose-ink);margin:0}
+.motto{font-size:18px;font-weight:600;line-height:1.4;color:var(--muted);margin:0;font-family:var(--display)}
 .motto.big{font-size:24px}
-header .motto{margin-top:6px;padding-left:14px;border-left:3px solid var(--rose)}
-.why{background:var(--surface);border-radius:22px;padding:24px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px;border-left:6px solid var(--amber)}
+header .motto{margin-top:2px;padding-left:14px;border-left:2px solid var(--rose);color:var(--ink)}
+.why{background:transparent;border:0;border-left:3px solid var(--amber);border-radius:0;padding:4px 0 4px 18px;display:flex;flex-direction:column;gap:10px}
+.why .label{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.why .story{font-family:'Caveat','Segoe Script',cursive;font-size:25px;line-height:1.35;color:var(--ink);display:flex;flex-direction:column;gap:12px}
+.why .story p{margin:0}
 .why p{margin:0}
-.why .sig{font-family:var(--hand);font-size:20px;color:var(--rose-ink)}
+.why .sig{font-size:26px;color:var(--amber-ink)}
 .card.transit{background:linear-gradient(135deg,var(--blue-soft),var(--rose-soft));border-color:transparent}
 .card.transit h4{color:var(--blue-ink)}
 .card.transit ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
 .card.transit .match{font-size:14px;font-weight:800;color:var(--rose-ink)}
+/* Akkordeon */
+.acc{border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent;overflow:hidden}
+.acc+.acc{margin-top:0}
+.acc>summary{list-style:none;cursor:pointer;padding:16px 2px;display:grid;grid-template-columns:1fr 26px;gap:12px;align-items:center;font-weight:800;font-size:17px}
+.acc>summary::-webkit-details-marker{display:none}
+.acc>summary .t{display:flex;flex-direction:column;gap:3px}
+.acc>summary .sub{font-weight:600;font-size:14.5px;color:var(--muted)}
+.acc>summary .chev{width:26px;height:26px;border:1px solid var(--rule);border-radius:3px;display:grid;place-items:center;font-size:14px;transition:transform .2s}
+.acc[open]>summary .chev{transform:rotate(180deg)}
+.acc>summary:focus-visible{outline:3px solid var(--amber);outline-offset:-3px}
+.acc .accbody{padding:0 2px 20px;display:flex;flex-direction:column;gap:10px}
+.acc.warn{background:var(--amber-soft);padding:0 14px;border-bottom-color:var(--amber)}
+.acc.rose{background:transparent}
+.acc.gate{background:transparent}
+.acc .kindline{font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){.acc>summary .chev{transition:none}}
+/* Transit Panel */
+.tpanel{border:0;border-left:3px solid var(--blue);border-radius:0;padding:4px 0 4px 18px;background:transparent;display:flex;flex-direction:column;gap:12px}
+.tpanel h3{color:var(--blue-ink)}
+.tpanel .head{font-family:var(--display);font-size:24px;font-weight:600;margin:0;line-height:1.25}
+.tpanel .range{font-size:15px;font-weight:700;color:var(--blue-ink)}
+.tlist{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px}
+.tlist li{background:transparent;border:0;border-top:1px solid var(--line);border-radius:0;padding:12px 0 0}
+.tlist b{display:block;margin-bottom:3px;color:var(--rose-ink)}
 /* Design Zusammenfassung */
 .me{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:baseline}
 .me .who{font-family:var(--display);font-size:24px}
 .facts{display:flex;flex-wrap:wrap;gap:8px}
-.fact{background:var(--blue-soft);color:var(--blue-ink);border-radius:999px;padding:5px 12px;font-size:14px;font-weight:700}
+.fact{background:transparent;color:var(--ink);border:1px solid var(--rule);border-radius:3px;padding:4px 10px;font-size:14px;font-weight:700}
 .centers{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px}
 .cdot{display:inline-flex;align-items:center;gap:6px}
 .cdot i{width:11px;height:11px;border-radius:3px;display:inline-block}
@@ -161,28 +164,26 @@ header .motto{margin-top:6px;padding-left:14px;border-left:3px solid var(--rose)
 details.graph summary{cursor:pointer;font-weight:700;font-size:14px;color:var(--sage-ink)}
 details.graph .svgbox{max-width:320px;margin-top:12px}
 details.graph svg{width:100%;height:auto;border-radius:14px}
-.example{font-family:var(--hand);color:var(--amber-ink);font-size:17px}
+.example{color:var(--amber-ink);font-size:16px;font-weight:700}
 
 .people{display:flex;flex-wrap:wrap;gap:8px}
-.pbtn{border:1.5px solid var(--line);background:var(--surface2);color:var(--ink);border-radius:999px;padding:7px 14px;font-size:15px;font-weight:700}
+.pbtn{border:1px solid var(--rule);background:transparent;color:var(--ink);border-radius:3px;padding:7px 13px;font-size:15px;font-weight:700}
 .pbtn[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
 .pbtn.add{border-style:dashed;color:var(--sage-ink)}
 .pbtn:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
 /* Auswahl */
 .group{display:flex;flex-direction:column;gap:10px}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{border:1.5px solid var(--line);background:var(--surface2);color:var(--ink);border-radius:999px;padding:8px 14px;font-size:15px;font-weight:600;line-height:1.25;text-align:left}
-.chip[aria-pressed="true"]{background:var(--sage-ink);border-color:var(--sage-ink);color:#fff}
-:root[data-theme="dark"] .chip[aria-pressed="true"]{color:#1E1A1C}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .chip[aria-pressed="true"]{color:#1E1A1C}}
+.chip{border:1px solid var(--rule);background:transparent;color:var(--ink);border-radius:3px;padding:9px 13px;font-size:15.5px;font-weight:600;line-height:1.3;text-align:left}
+.chip[aria-pressed="true"]{background:var(--amber);border-color:var(--amber-ink);color:var(--ink)}
 
 /* Ergebnis */
 .result{display:flex;flex-direction:column;gap:16px}
-.summary{background:linear-gradient(135deg,var(--sage-soft),var(--blue-soft));border-radius:22px;padding:24px;display:flex;flex-direction:column;gap:10px}
-.summary p{margin:0;font-family:var(--display);font-size:22px;line-height:1.35;text-wrap:pretty}
-.summary p b{color:var(--sage-ink);font-style:italic;font-weight:600}
-.cards{display:flex;flex-direction:column;gap:12px}
-.card{background:var(--surface);border-radius:18px;padding:20px 22px;display:flex;flex-direction:column;gap:8px;border:1.5px solid var(--line)}
+.summary{background:transparent;border-top:2px solid var(--ink);border-radius:0;padding:20px 0 6px;display:flex;flex-direction:column;gap:10px}
+.summary p{margin:0;font-family:var(--display);font-size:21px;line-height:1.35;text-wrap:pretty}
+.summary p b{color:var(--sage-ink);font-weight:700;font-weight:600}
+.cards{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+.card{background:var(--surface);border-radius:4px;padding:20px;display:flex;flex-direction:column;gap:8px;border:1px solid var(--line)}
 .card .kind{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--muted);display:flex;align-items:center;gap:8px}
 .card .kind i{width:11px;height:11px;border-radius:3px;display:inline-block}
 .card.open .kind i{border:2px solid var(--rose-ink)}
@@ -190,19 +191,19 @@ details.graph svg{width:100%;height:auto;border-radius:14px}
 .card h4{margin:0;font-family:var(--display);font-weight:600;font-size:21px;line-height:1.25}
 .card p{margin:0}
 .card .because{font-size:14px;color:var(--muted)}
-.card .step{font-family:var(--hand);font-size:19px;color:var(--sage-ink);line-height:1.35}
+.card .step{font-size:17px;font-weight:700;color:var(--sage-ink);line-height:1.35}
 .card.warn{background:var(--amber-soft);border-color:transparent}
 .card.warn h4{color:var(--amber-ink)}
 .card.accent{background:var(--rose-soft);border-color:transparent}
 .card.accent h4{color:var(--rose-ink)}
-.card.gate{border-style:dashed;background:var(--blue-soft);border-color:var(--blue)}
+.card.gate{border-style:dashed;background:var(--surface2);border-color:var(--rule)}
 .card.gate h4{color:var(--blue-ink)}
 .opts{display:flex;flex-wrap:wrap;gap:8px}
-.opt{border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:7px 13px;font-size:14.5px;font-weight:700}
-.opt[aria-pressed="true"]{background:var(--rose-ink);border-color:var(--rose-ink);color:#fff}
+.opt{border:1px solid var(--rule);background:transparent;color:var(--ink);border-radius:3px;padding:7px 12px;font-size:14.5px;font-weight:700}
+.opt[aria-pressed="true"]{background:var(--amber);border-color:var(--amber-ink);color:var(--ink)}
 .hunger-answer{min-height:0}
-.today{border-radius:22px;padding:22px 24px;background:var(--yellow-soft);box-shadow:var(--shadow);display:flex;flex-direction:column;gap:8px}
-.today .big{font-family:var(--hand);font-size:24px;line-height:1.35;color:var(--ink)}
+.today{border:0;border-left:3px solid var(--amber);border-radius:0;padding:4px 0 4px 18px;background:transparent;display:flex;flex-direction:column;gap:10px}
+.today .big{font-size:19px;font-weight:700;line-height:1.35;color:var(--ink)}
 .actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
 .toast{font-size:14px;font-weight:700;color:var(--sage-ink)}
 
@@ -210,7 +211,7 @@ details.graph svg{width:100%;height:auto;border-radius:14px}
 .hist{display:flex;flex-direction:column;gap:10px}
 .entry{border-top:1.5px solid var(--line);padding-top:10px;display:flex;flex-direction:column;gap:4px}
 .entry .d{font-size:13px;font-weight:800;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
-.entry .n{font-family:var(--hand);font-size:17px}
+.entry .n{font-size:16px}
 .pattern{display:flex;flex-direction:column;gap:8px}
 .bar{display:grid;grid-template-columns:minmax(120px,210px) 1fr auto;gap:10px;align-items:center;font-size:14.5px}
 .bar .track{height:10px;background:var(--surface2);border-radius:99px;overflow:hidden;border:1px solid var(--line)}
@@ -233,7 +234,12 @@ footer a{color:inherit}
 
 <div class="wrap">
   <header class="top">
-    <div class="orn" aria-hidden="true"><span style="inset:0;border-color:var(--rose);opacity:.6"></span><span style="inset:18px;border-color:var(--amber);opacity:.8"></span><span style="inset:36px;border-color:var(--sage);opacity:.7"></span><span style="inset:54px;border-color:var(--rose);opacity:.5"></span></div>
+    <div class="orn" aria-hidden="true"><svg viewBox="0 0 100 100" width="100%" height="100%" aria-hidden="true">
+      <circle cx="50" cy="50" r="34" fill="none" stroke="#7FA0B8" stroke-width="6" stroke-linecap="round" stroke-dasharray="171 43" transform="rotate(35 50 50)"/>
+      <circle cx="50" cy="50" r="24" fill="none" stroke="#9FB49B" stroke-width="5.5" stroke-linecap="round" stroke-dasharray="120 31" transform="rotate(205 50 50)"/>
+      <circle cx="50" cy="50" r="14.5" fill="none" stroke="#D9A7A1" stroke-width="5" stroke-linecap="round" stroke-dasharray="68 23" transform="rotate(125 50 50)"/>
+      <circle cx="50" cy="50" r="6" fill="#EFC978"/>
+    </svg></div>
     <div class="brand">innervision · Human Design</div>
     <h1>Dein <em class="mark">Aha</em> des Tages</h1>
     <p class="lead">Erkenne deine Muster mitten im Alltag. Nicht erst zwei Wochen später.</p>
@@ -256,6 +262,13 @@ footer a{color:inherit}
       </div>
     </div>
     <div id="designView" hidden></div>
+  </section>
+
+  <section class="tpanel" id="transitPanel" aria-labelledby="h-transit" hidden>
+    <h3 id="h-transit">Tagestransit</h3>
+    <p class="head" id="tHead"></p>
+    <p class="range" id="tRange"></p>
+    <details class="acc" id="tAcc"><summary><span class="t"><span>Was heißt das für dich?</span><span class="sub" id="tSub"></span></span><span class="chev">▾</span></summary><div class="accbody" id="tBody"></div></details>
   </section>
 
   <section class="panel tint-sage" aria-labelledby="h-heute">
@@ -281,12 +294,15 @@ footer a{color:inherit}
   </section>
 
   <section class="why" aria-labelledby="h-why">
-    <h3 id="h-why">Warum es Dein Aha des Tages gibt</h3>
-    <p>Ich bin krank im Bett gelegen, zum ersten Mal seit 2023. Und ich hab mich gefragt, wie konnte das passieren?</p>
-    <p>Dann bin ich zurückgegangen, Stopp für Stopp. Und plötzlich hab ich's gesehen. Die Stopps waren alle da. Ich hab sie nur nicht erkannt.</p>
-    <p>Erst als ich verstanden hab, was da in mir passiert ist, konnte ich was ändern. Weil es mir endlich bewusst war.</p>
-    <p>Genau dafür gibt's diesen Rechner. Damit du nicht erst krank werden musst, um hinzuschauen.</p>
-    <p class="sig">Kerstin 💜</p>
+    <h3 id="h-why">Warum es „Dein Aha des Tages“ gibt</h3>
+    <p class="label">Die persönliche Geschichte dazu von mir</p>
+    <div class="story">
+      <p>Ich bin krank im Bett gelegen, zum ersten Mal seit 2023. Und ich hab mich gefragt, wie konnte das passieren?</p>
+      <p>Dann bin ich zurückgegangen, Stopp für Stopp. Und plötzlich hab ich's gesehen. Die Stopps waren alle da. Ich hab sie nur nicht erkannt.</p>
+      <p>Erst als ich verstanden hab, was da in mir passiert ist, konnte ich was ändern. Weil es mir endlich bewusst war.</p>
+      <p>Genau dafür gibt's diesen Rechner. Damit du nicht erst krank werden musst, um hinzuschauen.</p>
+      <p class="sig">Kerstin 💛</p>
+    </div>
   </section>
 
   <section class="more" aria-labelledby="h-more">
@@ -902,6 +918,18 @@ RS.TRANSIT = {
   match: "Das passt zu dem, was du angetippt hast"
 };
 
+RS.TRANSIT_EFFECT = {
+  Kopf: " Das kann sich zeigen als viele Gedanken und Fragen, die gar nicht deine sind.",
+  Ajna: " Das kann sich zeigen als der Druck, dir sicher sein zu müssen.",
+  Kehle: " Das kann sich zeigen als der Drang, was sagen zu müssen, oder als enger Hals.",
+  G: " Das kann sich zeigen als die Frage, wo gehör ich eigentlich hin.",
+  Herz: " Das kann sich zeigen als Lust auf Belohnung, oft auf Süßes, und als Drang, dich zu beweisen.",
+  Milz: " Das kann sich zeigen als Ängste, die lauter werden, oder als Festhalten an Altem.",
+  Sakral: " Das kann sich zeigen als mehr Energie als sonst und das Gefühl, du müsstest sie gleich nutzen.",
+  Emotional: " Das kann sich zeigen als Stimmungen, die dich überrollen, obwohl sie gar nicht deine sind.",
+  Wurzel: " Das kann sich zeigen als Hetze, Unruhe und der Drang, alles schnell zu erledigen."
+};
+
 RS.NOTE_FOUND = "Aus deinem Text hab ich auch das erkannt";
 RS.HINWEIS = "Dein Aha des Tages ist eine Einladung zur Selbstreflexion mit Human Design. Sie ersetzt keine ärztliche oder therapeutische Begleitung. Wenn dein Körper länger streikt, lass dich bitte ärztlich anschauen.";
 </script>
@@ -911,7 +939,7 @@ RS.HINWEIS = "Dein Aha des Tages ist eine Einladung zur Selbstreflexion mit Huma
   function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];}); }
   function store(k,v){ try{ if(v===undefined) return JSON.parse(localStorage.getItem(k)); localStorage.setItem(k,JSON.stringify(v)); }catch(e){ return null; } }
 
-  var EXAMPLE = { name:"Beispiel", date:"1985-05-12", time:"08:30", place:"Wien", example:true };
+
   var state = { birth:null, chart:null, sel:{}, hunger:null, editing:null };
   function people(){ return store("rs_people")||[]; }
   function savePeople(p){ store("rs_people",p); }
@@ -928,15 +956,15 @@ RS.HINWEIS = "Dein Aha des Tages ist eine Einladung zur Selbstreflexion mit Huma
     var p=people().filter(function(x){return x.id===b.dataset.p;})[0]; if(p) activate(p);
   });
   function activate(p){
-    try{ state.chart=compute(p); state.birth=p; if(!p.example) store("rs_active",p.id); }
+    try{ state.chart=compute(p); state.birth=p; store("rs_active",p.id); }
     catch(e){ $("calcErr").textContent=e.message; return; }
     state.hunger=null; setSel([]); $("fNote").value=""; $("result").innerHTML="";
-    renderPeople(); renderDesign(); renderHist();
+    renderPeople(); renderDesign(); renderTransit(); renderHist();
   }
   function openForm(p){
     state.editing=p;
     $("fName").value=p?p.name||"":""; $("fDate").value=p?p.date:""; $("fTime").value=p?p.time:""; $("fPlace").value=p?p.place:"";
-    $("btnDel").hidden=!p; $("calcErr").textContent="";
+    $("btnDel").hidden=!p; $("btnCancel").hidden=!people().length; $("calcErr").textContent="";
     $("designForm").hidden=false; $("designView").hidden=true; $("fName").focus();
   }
   $("btnCancel").onclick=function(){ $("designForm").hidden=true; if(state.chart) $("designView").hidden=false; };
@@ -945,8 +973,8 @@ RS.HINWEIS = "Dein Aha des Tages ist eine Einladung zur Selbstreflexion mit Huma
     if(!confirm((p.name||"Diese Person")+" und ihren Verlauf wirklich entfernen?")) return;
     savePeople(people().filter(function(x){return x.id!==p.id;}));
     store("rs_hist",(store("rs_hist")||[]).filter(function(e){return e.pid!==p.id;}));
-    var P=people(); $("designForm").hidden=true; $("result").innerHTML="";
-    if(P.length) activate(P[0]); else activate(EXAMPLE);
+    var P=people(); $("result").innerHTML=""; $("transitPanel").hidden=true;
+    if(P.length){ activate(P[0]); } else { state.chart=null; state.birth=null; renderPeople(); $("designView").hidden=true; openForm(null); renderHist(); }
   };
   $("hinweis").textContent = RS.HINWEIS;
   /* Kontakt Links, einfach hier anpassen */
@@ -1002,6 +1030,42 @@ RS.HINWEIS = "Dein Aha des Tages ist eine Einladung zur Selbstreflexion mit Huma
     });
     return res;
   }
+  function sunRange(){
+    var T=transitNow(), d=new Date(), p=function(n){return (n<10?"0":"")+n;}, tz="Europe/Vienna";
+    try{ tz=Intl.DateTimeFormat().resolvedOptions().timeZone||tz; }catch(e){}
+    var end=null;
+    for(var i=1;i<=8;i++){
+      var x=new Date(d.getTime()+i*86400000);
+      var t=HumanDesign.compute(x.getFullYear()+"-"+p(x.getMonth()+1)+"-"+p(x.getDate()),"12:00",tz,"","T");
+      var g=t.planets_personality.filter(function(y){return y.body==="Sonne";})[0].gate;
+      if(g!==T.sun){ end=new Date(x.getTime()-86400000); break; }
+    }
+    return end;
+  }
+  function renderTransit(){
+    var c=state.chart; if(!c) return;
+    try{
+      var TR=transitFor(c), end=sunRange();
+      state.transit=TR; state.sunGate=TR.sun;
+      $("tHead").textContent="Tor "+TR.sun+", "+RS.GATE_NAME[TR.sun]+", steht grad für alle im Vordergrund.";
+      $("tRange").textContent = end ? "Noch bis "+end.toLocaleDateString("de-AT",{weekday:"long",day:"numeric",month:"long"}) : "";
+      var poss=function(x){ var n=RS.CENTER_NAME[x].open; return (/^Offene /.test(n)?"deine ":"dein ")+n.charAt(0).toLowerCase()+n.slice(1); };
+      var body="";
+      if(RS.GATE[TR.sun]) body+='<p>'+esc(RS.GATE[TR.sun].d)+'</p>';
+      var lis=[];
+      TR.centers.forEach(function(x){ lis.push('<li><b>'+esc(poss(x))+' ist von außen aktiviert</b>'+esc(RS.TRANSIT_EFFECT[x])+'</li>'); });
+      TR.channels.slice(0,2).forEach(function(ch){
+        var nm=RS.CHANNEL[ch.k]?RS.CHANNEL[ch.k].t:"Kanal "+ch.k.replace("-"," ")+", "+RS.GATE_NAME[+ch.k.split("-")[0]]+" und "+RS.GATE_NAME[+ch.k.split("-")[1]];
+        var d=RS.CHANNEL[ch.k]?RS.CHANNEL[ch.k].d:"Dieses Thema ist grad besonders laut bei dir.";
+        lis.push('<li><b>'+esc("Mit deinem Tor "+ch.own+" ergibt sich "+nm)+'</b>'+esc(d)+'</li>');
+      });
+      if(lis.length) body+='<ul class="tlist">'+lis.join("")+'</ul>';
+      else body+='<p>'+esc(RS.TRANSIT.calm)+'</p>';
+      $("tBody").innerHTML=body;
+      $("tSub").textContent = lis.length ? (lis.length===1?"1 Thema ist bei dir grad aktiviert":lis.length+" Themen sind bei dir grad aktiviert") : "Grad ist es ruhig bei dir";
+      $("transitPanel").hidden=false;
+    }catch(e){ $("transitPanel").hidden=true; }
+  }
   function channelKeys(chart){ return chart.channels.map(function(c){ var a=Math.min(c.gates[0],c.gates[1]), b=Math.max(c.gates[0],c.gates[1]); return a+"-"+b; }); }
   function isOpen(chart,c){ return chart.centers_open.indexOf(c)>=0; }
 
@@ -1016,7 +1080,7 @@ RS.HINWEIS = "Dein Aha des Tages ist eine Einladung zur Selbstreflexion mit Huma
     var ns=RS.NOTSELF[c.type];
     var svg=""; try{ svg=HumanDesign.bodygraphSVG(c,{dunkel:"#55704A",hell:"#C6A5B7",grey:"#DAD2CB",ink:"#2E2A2C",bg:"#F5F1EC"}); }catch(e){}
     $("designView").innerHTML =
-      (b.example?'<p class="example" style="margin:0">Das ist ein Beispiel. Trag deine eigenen Daten ein, dann wird’s deins.</p>':'')+
+
       '<div class="design">'+(svg?'<div class="mini">'+svg+'</div>':'')+'<div class="info">'+
       '<div class="me"><span class="who">'+esc(b.name||"Du")+'</span><span class="muted small">'+esc(b.date.split("-").reverse().join("."))+' · '+esc(b.time)+' · '+esc(b.place)+'</span></div>'+
       '<div class="facts"><span class="fact">'+esc(c.type)+'</span><span class="fact">Profil '+esc(c.profile)+'</span><span class="fact">'+esc(RS.AUTH_NAME[c.authority]||c.authority)+'</span>'+(ns?'<span class="fact">Warnsignal '+esc(ns.name)+'</span>':'')+'</div>'+
@@ -1024,11 +1088,11 @@ RS.HINWEIS = "Dein Aha des Tages ist eine Einladung zur Selbstreflexion mit Huma
         (def.length?'<div class="cg fix"><h5>Das ist fix in dir</h5><div class="ctags">'+def.map(function(x){return '<span class="ctag">'+cicon(x,true)+esc(SHORT[x])+'</span>';}).join("")+'</div></div>':'')+
         (open.length?'<div class="cg open"><h5>Hier nimmst du von anderen auf</h5><div class="ctags">'+open.map(function(x){return '<span class="ctag">'+cicon(x,false)+esc(SHORT[x])+'</span>';}).join("")+'</div></div>':'')+
       '</div>'+
-      '<div><button class="btn ghost" id="btnEdit">'+(b.example?'Eigene Daten eintragen':'Daten ändern')+'</button></div>'+
+      '<div><button class="btn ghost" id="btnEdit">Daten ändern</button></div>'+
       '</div></div>';
-    $("h-design").textContent = b.example ? "Für wen ist das Aha?" : "Das Design von "+(b.name||"dir");
+    $("h-design").textContent = "Das Design von "+(b.name||"dir");
     $("designView").hidden=false; $("designForm").hidden=true;
-    $("btnEdit").onclick=function(){ openForm(b.example?null:b); };
+    $("btnEdit").onclick=function(){ openForm(b); };
   }
 
   $("btnCalc").onclick=function(){
@@ -1100,51 +1164,52 @@ RS.HINWEIS = "Dein Aha des Tages ist eine Einladung zur Selbstreflexion mit Huma
     html+='<div class="summary"><h3>Dein Aha des Tages'+(state.birth.name?' für '+esc(state.birth.name):'')+'</h3><p>Heute spielen bei dir vor allem '+joinNat(parts)+' zusammen.</p>'+
       ($("fNote").value.trim()?'<p class="quote">„'+esc($("fNote").value.trim())+'“</p>':'')+
       (A.found.length?'<div class="found"><b>'+esc(RS.NOTE_FOUND)+'</b>'+A.found.map(function(id){return '<span>'+esc(ITEM[id].l)+'</span>';}).join("")+'</div>':'')+
+      (function(){ try{
+        var TR=state.transit; if(!TR) return "";
+        var selG=[], selC=[]; A.ids.forEach(function(id){ var it=ITEM[id]; (it.g||[]).forEach(function(g){selG.push(g);}); (it.c||[]).forEach(function(x){selC.push(x);}); });
+        var m=[]; if(selG.indexOf(TR.sun)>=0) m.push("Tor "+TR.sun);
+        TR.centers.forEach(function(x){ if(selC.indexOf(x)>=0) m.push(RS.CENTER_NAME[x].open); });
+        TR.channels.forEach(function(ch){ if(selG.indexOf(ch.own)>=0) m.push("Tor "+ch.own); });
+        m=m.filter(function(v,i,a){return a.indexOf(v)===i;});
+        return m.length?'<p class="tmatch"><b>Auch der Tagestransit spielt mit</b> '+esc(joinNat(m))+'</p>':"";
+      }catch(e){ return ""; } })()+
       '</div>';
 
-    var cards="";
+    var cards="", acc=function(kind,title,sub,body,cls,open){
+      return '<details class="acc '+(cls||'')+'"'+(open?' open':'')+'><summary><span class="t"><span class="kindline">'+esc(kind)+'</span><span>'+esc(title)+'</span>'+(sub?'<span class="sub">'+esc(sub)+'</span>':'')+'</span><span class="chev">▾</span></summary><div class="accbody">'+body+'</div></details>';
+    };
     var ns=RS.NOTSELF[c.type];
     if(ns && A.flags.ns && A.flags.ns.indexOf(ns.key)>=0){
-      cards+='<div class="card warn"><div class="kind">Dein Warnsignal</div><h4>Da ist dein '+esc(ns.name)+'</h4><p>'+esc(ns.t)+'</p><p class="step">'+esc(RS.STRATEGY[c.type])+'</p></div>';
+      cards+=acc("Dein Warnsignal","Da ist dein "+ns.name,"Das zeigt dir, dass grad was gegen dein Design läuft",'<p>'+esc(ns.t)+'</p><p class="step">'+esc(RS.STRATEGY[c.type])+'</p>',"warn",true);
     }
     if(A.flags.invite){
-      cards+='<div class="card warn"><div class="kind">Die Einladung</div><h4>Wer hat dich eigentlich gefragt?</h4><p>'+esc(RS.INVITE[c.type])+'</p></div>';
+      cards+=acc("Die Einladung","Wer hat dich eigentlich gefragt?","Die wichtigste Frage für heute",'<p>'+esc(RS.INVITE[c.type])+'</p>',"warn",true);
     }
     if((A.flags.invite||A.flags.kritik) && /5/.test(c.profile)){
-      cards+='<div class="card accent"><div class="kind">Profil '+esc(c.profile)+'</div><h4>Die Projektion</h4><p>'+esc(RS.FIVE)+'</p></div>';
+      cards+=acc("Profil "+c.profile,"Die Projektion der anderen","Warum Kritik dich so trifft",'<p>'+esc(RS.FIVE)+'</p>',"rose");
     }
     if(A.flags.schoen){
-      cards+='<div class="card accent"><div class="kind">Gut zu wissen</div><h4>Auch Schönes kostet Energie</h4><p>'+esc(RS.SCHOEN)+'</p></div>';
+      cards+=acc("Gut zu wissen","Auch Schönes kostet Energie","Ein Nein ist ein Ja zu dir",'<p>'+esc(RS.SCHOEN)+'</p>',"rose");
     }
     A.order.slice(0,3).forEach(function(x){
       var o=isOpen(c,x), t=RS.CENTER[x];
-      cards+='<div class="card '+(o?'open':'def')+'"><div class="kind"><i></i>'+(o?'offen, hier nimmst du auf':'definiert, das ist deins')+'</div><h4>'+esc(cName(x))+'</h4><p>'+esc(o?t.open:t.def)+'</p>'+'<p class="body">Im Körper zeigt sich das oft über '+esc(RS.BODY[x])+'</p>'+why(A.centers[x].why)+'<p class="step">'+esc(o?t.openStep:t.defStep)+'</p></div>';
+      var body='<p>'+esc(o?t.open:t.def)+'</p><p class="body">Im Körper zeigt sich das oft über '+esc(RS.BODY[x])+'</p>'+why(A.centers[x].why)+'<p class="step">'+esc(o?t.openStep:t.defStep)+'</p>';
+      cards+=acc(o?"Offen, hier nimmst du auf":"Definiert, das ist deins", cName(x), (o?t.open:t.def).split(".")[0]+".", body);
     });
-    Object.keys(A.chans).forEach(function(k){ var t=RS.CHANNEL[k]; cards+='<div class="card gate"><div class="kind">In deinem Chart</div><h4>'+esc(t.t)+'</h4><p>'+esc(t.d)+'</p>'+why(A.chans[k].why)+'</div>'; });
-    gateOrder(A).slice(0,3).forEach(function(g){ var t=RS.GATE[g]; cards+='<div class="card gate"><div class="kind">In deinem Chart</div><h4>'+esc(t.t)+'</h4><p>'+esc(t.d)+'</p>'+why(A.gates[g].why)+'</div>'; });
-
-    if(A.flags.hunger){
-      cards+='<div class="card accent"><div class="kind">Hunger</div><h4>Welcher Hunger ist das?</h4><p>'+esc(RS.HUNGER.intro)+'</p><div class="opts" id="hOpts">'+RS.HUNGER.opts.map(function(o){ return '<button class="opt" aria-pressed="'+(state.hunger===o.id?'true':'false')+'" data-h="'+o.id+'">'+esc(o.l)+'</button>'; }).join("")+'</div><p class="hunger-answer" id="hAns">'+(state.hunger?esc(RS.HUNGER.opts.filter(function(o){return o.id===state.hunger;})[0].t):'')+'</p></div>';
+    var gc="";
+    Object.keys(A.chans).forEach(function(k){ var t=RS.CHANNEL[k]; gc+='<div><b>'+esc(t.t)+'</b><p>'+esc(t.d)+'</p>'+why(A.chans[k].why)+'</div>'; });
+    gateOrder(A).slice(0,3).forEach(function(g){ var t=RS.GATE[g]; gc+='<div><b>'+esc(t.t)+'</b><p>'+esc(t.d)+'</p>'+why(A.gates[g].why)+'</div>'; });
+    if(gc){
+      var n=Object.keys(A.chans).length+Math.min(gateOrder(A).length,3);
+      cards+=acc("In deinem Chart","Deine Tore und Kanäle dazu",n===1?"1 passt heute dazu":n+" passen heute dazu",gc,"gate");
     }
-
-    try{
-      var TR=transitFor(c), lis=[], matched=[];
-      var selGates=[], selCenters=[];
-      A.ids.forEach(function(id){ var it=ITEM[id]; (it.g||[]).forEach(function(g){selGates.push(g);}); (it.c||[]).forEach(function(x){selCenters.push(x);}); });
-      var sunTxt=fill(RS.TRANSIT.sun,{g:TR.sun,n:RS.GATE_NAME[TR.sun]})+(RS.GATE[TR.sun]?" "+RS.GATE[TR.sun].d:"");
-      lis.push(sunTxt);
-      if(selGates.indexOf(TR.sun)>=0) matched.push("Tor "+TR.sun);
-      var poss=function(x){ var n=RS.CENTER_NAME[x].open; return (/^Offene /.test(n)?"deine ":"dein ")+n.charAt(0).toLowerCase()+n.slice(1); };
-      if(TR.centers.length){ lis.push(fill(RS.TRANSIT.center,{v:TR.centers.length>1?"sind":"ist",c:joinNat(TR.centers.map(poss))})); }
-      TR.centers.forEach(function(x){ if(selCenters.indexOf(x)>=0) matched.push(poss(x)); });
-      TR.channels.slice(0,2).forEach(function(ch){ var nm=RS.CHANNEL[ch.k]?RS.CHANNEL[ch.k].t:"Kanal "+ch.k.replace("-"," ")+", "+RS.GATE_NAME[+ch.k.split("-")[0]]+" und "+RS.GATE_NAME[+ch.k.split("-")[1]]; lis.push(fill(RS.TRANSIT.channel,{own:ch.own,k:nm})); if(selGates.indexOf(ch.own)>=0||selGates.indexOf(ch.other)>=0) matched.push("Tor "+ch.own); });
-      if(!TR.centers.length && !TR.channels.length) lis.push(RS.TRANSIT.calm);
-      state.sunGate=TR.sun;
-      cards+='<div class="card transit"><div class="kind">Tagestransit</div><h4>'+esc(RS.TRANSIT.title)+'</h4><ul>'+lis.map(function(x){return '<li>'+esc(x)+'</li>';}).join("")+'</ul>'+(matched.length?'<p class="match">'+esc(RS.TRANSIT.match)+', '+esc(joinNat(matched.filter(function(v,i,a){return a.indexOf(v)===i;})))+'</p>':'')+'</div>';
-    }catch(e){}
+    if(A.flags.hunger){
+      var hb='<p>'+esc(RS.HUNGER.intro)+'</p><div class="opts" id="hOpts">'+RS.HUNGER.opts.map(function(o){ return '<button class="opt" aria-pressed="'+(state.hunger===o.id?'true':'false')+'" data-h="'+o.id+'">'+esc(o.l)+'</button>'; }).join("")+'</div><p class="hunger-answer" id="hAns">'+(state.hunger?esc(RS.HUNGER.opts.filter(function(o){return o.id===state.hunger;})[0].t):'')+'</p>';
+      cards+=acc("Hunger","Welcher Hunger ist das?","Körper, Gefühl, Müdigkeit oder Druck",hb,"rose",true);
+    }
     var auth=RS.AUTH[c.authority];
     if(auth){
-      cards+='<div class="card'+(A.flags.auth?' warn':'')+'"><div class="kind">Deine '+esc(RS.AUTH_NAME[c.authority]||c.authority)+'</div><h4>So merkst du den Stopp beim nächsten Mal früher</h4><p>'+esc(auth)+'</p></div>';
+      cards+=acc("Deine "+(RS.AUTH_NAME[c.authority]||c.authority),"So merkst du den Stopp früher","Deine Frage für den nächsten Moment",'<p>'+esc(auth)+'</p>',A.flags.auth?"warn":"");
     }
     html+='<div class="cards">'+cards+'</div>';
 
@@ -1162,7 +1227,6 @@ RS.HINWEIS = "Dein Aha des Tages ist eine Einladung zur Selbstreflexion mit Huma
     var ho=$("hOpts"); if(ho) ho.addEventListener("click", function(e){ var b=e.target.closest(".opt"); if(!b) return; state.hunger=b.dataset.h; Array.prototype.forEach.call(ho.querySelectorAll(".opt"),function(x){x.setAttribute("aria-pressed",x===b?"true":"false");}); $("hAns").textContent=RS.HUNGER.opts.filter(function(o){return o.id===state.hunger;})[0].t; });
     $("btnSave").onclick=function(){
       var h=store("rs_hist")||[];
-      if(state.birth.example){ $("saveToast").textContent="Trag zuerst echte Geburtsdaten ein, dann kannst du speichern."; return; }
       h.unshift({ pid:state.birth.id, t:Date.now(), sel:A.ids, note:$("fNote").value.trim(), top:A.order.slice(0,3), hunger:state.hunger, aware:state.aware, sun:state.sunGate||null, j:RS.JOURNAL.reduce(function(o,j){ var v=$(j.id).value.trim(); if(v) o[j.id]=v; return o; },{}) });
       store("rs_hist",h.slice(0,200));
       $("saveToast").textContent="Gespeichert";
@@ -1225,19 +1289,19 @@ RS.HINWEIS = "Dein Aha des Tages ist eine Einladung zur Selbstreflexion mit Huma
     var P=people(), old=store("rs_birth");
     if(!P.length && old){ old.id=uid(); P=[old]; savePeople(P); }
     var a=activeId(), saved=P.filter(function(x){return x.id===a;})[0]||P[0];
-    var b=saved||EXAMPLE;
-    try{ state.chart=compute(b); state.birth=b; renderDesign(); }
-    catch(e){ $("calcErr").textContent=e.message; }
+    if(saved){
+      try{ state.chart=compute(saved); state.birth=saved; renderDesign(); renderTransit(); }
+      catch(e){ $("calcErr").textContent=e.message; }
+    } else {
+      $("designView").hidden=true; $("designForm").hidden=false; $("btnCancel").hidden=true;
+    }
     renderPeople();
-    if(!saved){ setSel(["k_muede","k_bauch","s_menschen","s_rat","g_hilflos"]); $("fNote").value=""; if(state.chart) showResult(false); }
+
     renderHist();
   }
   if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",boot); else boot();
 })();
 </script>
-
-</body>
-</html>
 
 </body>
 </html>
